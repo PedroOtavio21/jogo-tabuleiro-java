@@ -9,6 +9,22 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "jogo-tabuleiro-java_b45d3fd2",
+            "vmArgs": "--module-path \"C:/Users/yasmi/Desktop/VICTOR PROGRAMAS/JAVA/JAVALIBS/JavaLibs/openjfx-22.0.2_windows-x64_bin-sdk/javafx-sdk-22.0.2/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "jogo-tabuleiro-java_b45d3fd2",
+            "vmArgs": "--module-path \"C:/Users/yasmi/Desktop/VICTOR PROGRAMAS/JAVA/JAVALIBS/JavaLibs/openjfx-22.0.2_windows-x64_bin-sdk/javafx-sdk-22.0.2/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
@@ -19,14 +35,15 @@
             "request": "launch",
             "mainClass": "App",
             "projectName": "jogo-tabuleiro-java_64c1f391",
-            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-21.0.4/lib\" --add-modules javafx.controls,javafx.fxml"
+            "vmArgs": "--module-path \"C:/Users/yasmi/Desktop/VICTOR PROGRAMAS/JAVA/JAVALIBS/JavaLibs/openjfx-22.0.2_windows-x64_bin-sdk/javafx-sdk-22.0.2/lib\" --add-modules javafx.controls,javafx.fxml"
         },
         {
             "type": "java",
             "name": "Main",
             "request": "launch",
             "mainClass": "Main",
-            "projectName": "jogo-tabuleiro-java_64c1f391"
+            "projectName": "jogo-tabuleiro-java_64c1f391",
+            "vmArgs": "--module-path \"C:/Users/yasmi/Desktop/VICTOR PROGRAMAS/JAVA/JAVALIBS/JavaLibs/openjfx-22.0.2_windows-x64_bin-sdk/javafx-sdk-22.0.2/lib\" --add-modules javafx.controls,javafx.fxml"
         }
     ]
 }

@@ -110,15 +110,18 @@ public class Tabuleiro {
         int CartaAleatoria = random.nextInt(3) + 1;
         switch (CartaAleatoria) {
             case 1 -> {
-                Jogador novoJogador = new JogadorAzarado(jogador.getNome(), jogador.getCor(), jogador.getPosicao(), jogador.getJogadas());
+                Jogador novoJogador = new JogadorAzarado(jogador.getNome(), jogador.getCor(), jogador.getPosicao(),
+                        jogador.getJogadas());
                 return novoJogador;
             }
             case 2 -> {
-                Jogador novoJogador = new JogadorSortudo(jogador.getNome(), jogador.getCor(), jogador.getPosicao(), jogador.getJogadas());
+                Jogador novoJogador = new JogadorSortudo(jogador.getNome(), jogador.getCor(), jogador.getPosicao(),
+                        jogador.getJogadas());
                 return novoJogador;
             }
             default -> {
-                Jogador novoJogador = new JogadorComun(jogador.getNome(), jogador.getCor(), jogador.getPosicao(), jogador.getJogadas());
+                Jogador novoJogador = new JogadorComun(jogador.getNome(), jogador.getCor(), jogador.getPosicao(),
+                        jogador.getJogadas());
                 return novoJogador;
             }
         }
@@ -201,5 +204,6 @@ public class Tabuleiro {
 
     public void AndarNoTabuleiro(Jogador jogador, int casasAndadas) {
         casas[casasAndadas] = jogador;
+
     }
 }

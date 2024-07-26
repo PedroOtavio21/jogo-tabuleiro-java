@@ -1,8 +1,10 @@
-public class JogadorAzarado extends Jogador {
+package JavaFx;
+
+public class JogadorSortudo extends Jogador {
 
     // Métodos
-    public JogadorAzarado(String nome, String cor, int posicao, int jogadas) {
-        super(nome, cor, "azarado", posicao, jogadas);
+    public JogadorSortudo(String nome, String cor, int posicao, int jogadas) {
+        super(nome, cor, "sortudo", posicao, jogadas);
     }
 
     @Override
@@ -10,17 +12,16 @@ public class JogadorAzarado extends Jogador {
         int dadoUm = dado.rolarDado();
         int dadoDois = dado.rolarDado();
         System.out.println("Dado 1 (" + dadoUm + ") - Dado 2 (" + dadoDois + ")");
-        // verificaDadosIguais(dadoUm, dadoDois);
         boolean dadosValidos = valoresValidos((dadoUm + dadoDois));
 
         if (dadosValidos == false) {
-
             System.out.println("Rolando os dados novamente");
             dadoUm = dado.rolarDado();
             dadoDois = dado.rolarDado();
             System.out.println("Dado 1 (" + dadoUm + ") - Dado 2 (" + dadoDois + ")");
 
             dadosValidos = valoresValidos((dadoUm + dadoDois));
+
             if (dadosValidos == false) {
 
                 System.out.println("Passando a vez");
@@ -48,7 +49,7 @@ public class JogadorAzarado extends Jogador {
             if (dadoUm == dadoDois) {
                 int novoDadoUm = dado.rolarDado();
                 int novoDadoDois = dado.rolarDado();
-                System.out.println("Rolando os dados novamente porque os dados anteriores eram iguais");
+                System.out.println("Rolando os dados novamente porque os dados anteriores são iguais");
                 System.out.println("NOVOS DADOS - Dado 1 (" + novoDadoUm + ") - Dado 2 (" + novoDadoDois + ")");
                 System.out.println("Soma dos dados: " + (novoDadoUm + novoDadoDois));
                 System.out.println("Soma de todos os dados: " + (dadoUm + dadoDois + novoDadoDois + novoDadoDois));
@@ -61,15 +62,15 @@ public class JogadorAzarado extends Jogador {
 
     public boolean valoresValidos(int somaDosDados) {
         if (podeJogar == true) {
-            if (somaDosDados > 6) {
+            if (somaDosDados < 7) {
                 System.out.println("Soma dos dados: " + somaDosDados);
-                System.out.println("Valor dos dados maior que 6");
+                System.out.println("Valor dos dados menor que 7");
                 return false;
             } else {
                 return true;
             }
         } else {
-            System.out.println("Jogador não pode jogar nessa rodada");
+            System.out.println("Jogador não poderá jogar nesta rodada!");
             return false;
         }
     }

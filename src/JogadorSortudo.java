@@ -9,32 +9,56 @@ public class JogadorSortudo extends Jogador {
     public int jogadarDados(Dado dado) {
         int dadoUm = dado.rolarDado();
         int dadoDois = dado.rolarDado();
-        boolean podeJogar = PodeJogar((dadoUm + dadoDois));
+        System.out.println("Dado 1 (" + dadoUm + ") - Dado 2 (" + dadoDois + ")");
+        boolean dadosValidos = valoresValidos((dadoUm + dadoDois));
 
-        if (podeJogar == false) {
-            System.out.println("Dado 1 (" + dadoUm + ") - Dado 2 (" + dadoDois + ")");
+        if (dadosValidos == false) {
             System.out.println("Rolando os dados novamente");
             dadoUm = dado.rolarDado();
             dadoDois = dado.rolarDado();
+            System.out.println("Dado 1 (" + dadoUm + ") - Dado 2 (" + dadoDois + ")");
 
-            podeJogar = PodeJogar((dadoUm + dadoDois));
-            if (podeJogar == false) {
-                System.out.println("Dado 1 (" + dadoUm + ") - Dado 2 (" + dadoDois + ")");
+            dadosValidos = valoresValidos((dadoUm + dadoDois));
+
+            if (dadosValidos == false) {
+
                 System.out.println("Passando a vez");
                 return -1;
             } else {
-                System.out.println("Dado 1 (" + dadoUm + ") - Dado 2 (" + dadoDois + ")");
+
                 System.out.println("Soma dos dados: " + (dadoUm + dadoDois));
+
+                if (dadoUm == dadoDois) {
+                    int novoDadoUm = dado.rolarDado();
+                    int novoDadoDois = dado.rolarDado();
+                    System.out.println("Rolando os dados novamente porque os dados anteriores");
+                    System.out.println("NOVOS DADOS - Dado 1 (" + novoDadoUm + ") - Dado 2 (" + novoDadoDois + ")");
+                    System.out.println("Soma dos dados: " + (novoDadoUm + novoDadoDois));
+                    System.out.println("Soma de todos os dados: " + (dadoUm + dadoDois + novoDadoDois + novoDadoDois));
+                    return dadoUm + dadoDois + novoDadoDois + novoDadoDois;
+                }
+
                 return dadoUm + dadoDois;
             }
         } else {
-            System.out.println("Dado 1 (" + dadoUm + ") - Dado 2 (" + dadoDois + ")");
+
             System.out.println("Soma dos dados: " + (dadoUm + dadoDois));
+
+            if (dadoUm == dadoDois) {
+                int novoDadoUm = dado.rolarDado();
+                int novoDadoDois = dado.rolarDado();
+                System.out.println("Rolando os dados novamente porque os dados anteriores são iguais");
+                System.out.println("NOVOS DADOS - Dado 1 (" + novoDadoUm + ") - Dado 2 (" + novoDadoDois + ")");
+                System.out.println("Soma dos dados: " + (novoDadoUm + novoDadoDois));
+                System.out.println("Soma de todos os dados: " + (dadoUm + dadoDois + novoDadoDois + novoDadoDois));
+                return dadoUm + dadoDois + novoDadoDois + novoDadoDois;
+            }
+
             return dadoUm + dadoDois;
         }
     }
 
-    public boolean PodeJogar(int somaDosDados) {
+    public boolean valoresValidos(int somaDosDados) {
         if (podeJogar == true) {
             if (somaDosDados < 7) {
                 System.out.println("Soma dos dados: " + somaDosDados);

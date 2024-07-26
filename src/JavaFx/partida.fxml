@@ -58,32 +58,32 @@
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label fx:id="jogador1" layoutX="492.0" layoutY="67.0" text="Jogadores 1">
+            <Label fx:id="jogador1" layoutX="456.0" layoutY="67.0" text="Jogadores 1">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label fx:id="jogador2" layoutX="492.0" layoutY="87.0" text="Jogadores 2">
+            <Label fx:id="jogador2" layoutX="456.0" layoutY="87.0" text="Jogadores 2">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label fx:id="jogador3" layoutX="492.0" layoutY="107.0" text="Jogadores 3">
+            <Label fx:id="jogador3" layoutX="456.0" layoutY="107.0" text="Jogadores 3">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label fx:id="jogador4" layoutX="492.0" layoutY="127.0" text="Jogadores 4">
+            <Label fx:id="jogador4" layoutX="456.0" layoutY="127.0" text="Jogadores 4">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label fx:id="jogador5" layoutX="492.0" layoutY="147.0" text="Jogadores 5">
+            <Label fx:id="jogador5" layoutX="456.0" layoutY="147.0" text="Jogadores 5">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label fx:id="jogador6" layoutX="492.0" layoutY="167.0" text="Jogadores 6">
+            <Label fx:id="jogador6" layoutX="456.0" layoutY="167.0" text="Jogadores 6">
                <font>
                   <Font size="14.0" />
                </font>
@@ -97,6 +97,46 @@
                </font>
             </Label>
             <Label fx:id="dado2" layoutX="383.0" layoutY="302.0" text="Dado 2">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="posicaoJogadorAtual" layoutX="36.0" layoutY="132.0" text="Posição">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="posicao1" layoutX="552.0" layoutY="67.0" text="Posição">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="posicao2" layoutX="552.0" layoutY="87.0" text="Posição">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="posicao3" layoutX="552.0" layoutY="107.0" text="Posição">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="posicao4" layoutX="552.0" layoutY="127.0" text="Posição">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="posicao5" layoutX="552.0" layoutY="147.0" text="Posição">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="posicao6" layoutX="552.0" layoutY="167.0" text="Posição">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="somaDosDados" layoutX="407.0" layoutY="338.0" text="Soma dos dados: ">
                <font>
                   <Font size="20.0" />
                </font>

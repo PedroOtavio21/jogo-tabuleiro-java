@@ -1,4 +1,7 @@
+package JavaFx;
+
 import java.util.ArrayList;
+import java.util.Random;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -64,52 +67,65 @@ public class ConfigurandoPecaController {
     private RadioButton verde;
 
     ArrayList<String> jogadores = new ArrayList<>();
+
+    ArrayList<Jogador> jogadoresObj = new ArrayList<>();
+
     @FXML
     void onActionBtn(ActionEvent event) {
 
         System.out.println(jogadorAtual);
         System.out.println(numeroDeJogadores);
 
-        while (jogadorAtual != numeroDeJogadores) {
+        String nome = campoNome.getText();
+        RadioButton selectedRadioButton = (RadioButton) grupoCOr.getSelectedToggle();
 
-            String nome = campoNome.getText();
-            RadioButton selectedRadioButton = (RadioButton) grupoCOr.getSelectedToggle();
+        if (selectedRadioButton != null && !nome.isEmpty()) {
             String cor = selectedRadioButton.getText();
-            System.out.println("Nome: " + nome + "| cor: " + cor);
+            System.out.println("Nome: " + nome + "|cor: " + cor);
             System.out.println("jogador cadastrado");
-            String jogador = nome +", "+cor;
+            String jogador = nome + ", " + cor;
+
+            Random random = new Random();
+            int tipoDePeca = random.nextInt(3) + 1;
+            Jogador jogadorCriado;
+
+            switch (tipoDePeca) {
+                case 1 -> {
+                    jogadorCriado = new JogadorAzarado(nome, cor, 0, 0);
+                    jogadoresObj.add(jogadorCriado);
+                }
+
+                case 2 -> {
+                    jogadorCriado = new JogadorSortudo(nome, cor, 0, 0);
+                    jogadoresObj.add(jogadorCriado);
+                }
+
+                case 3 -> {
+                    jogadorCriado = new JogadorComun(nome, cor, 0, 0);
+                    jogadoresObj.add(jogadorCriado);
+                }
+
+            }
 
             jogadores.add(jogador);
 
             jogadorAtual++;
-            campoQuantidadeJogadores1.setText("Jogador " + jogadorAtual);
-            campoNome.setText("");
-            grupoCOr.selectToggle(null);
-            selectedRadioButton.setDisable(true);
+
+            if (jogadorAtual <= numeroDeJogadores) {
+                campoQuantidadeJogadores1.setText("Jogador " + jogadorAtual);
+                campoNome.setText("");
+                grupoCOr.selectToggle(null);
+                selectedRadioButton.setDisable(true);
+            } else {
+                Object x = (Object) jogadores;
+                Object jogadoresCriador = (Object) jogadoresObj;
+                Main.changeScreen("partida", jogadoresObj);
+            }
+
             System.out.println(jogadorAtual);
 
-        }
-        if(numeroDeJogadores == jogadorAtual){
-            
-
-            String nome = campoNome.getText();
-            RadioButton selectedRadioButton = (RadioButton) grupoCOr.getSelectedToggle();
-            String cor = selectedRadioButton.getText();
-            System.out.println("Nome: " + nome + "| cor: " + cor);
-            System.out.println("jogador cadastrado");
-            String jogador = nome +", "+cor;
-
-            jogadores.add(jogador);
-
-            jogadorAtual++;
-            campoQuantidadeJogadores1.setText("Jogador " + jogadorAtual);
-            campoNome.setText("");
-            grupoCOr.selectToggle(null);
-            selectedRadioButton.setDisable(true);
-            System.out.println(jogadorAtual);
-            
-            Object x = (Object)jogadores;
-            Main.changeScreen("partida", x);
+        } else {
+            System.out.println("Preencha o nome e selecione uma cor");
         }
 
     }

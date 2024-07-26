@@ -1,3 +1,5 @@
+import Main;
+package JavaFx;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,7 +10,6 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
 import javafx.scene.control.Alert;
-
 
 import javafx.scene.Scene;
 
@@ -37,20 +38,18 @@ public class TelaInicialController {
 
     @FXML
     void acaoDoBotao(ActionEvent event) {
-       
+
         RadioButton selectedRadioButton = (RadioButton) grupoJogadores.getSelectedToggle();
-        if(selectedRadioButton == null){
+        if (selectedRadioButton == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Erro");
             alert.setHeaderText("Você deve selecionar um número de jogadores");
             alert.show();
             return;
         }
-        
 
         Main.changeScreen("second", selectedRadioButton.getText());
-        
-        
+
     }
 
 }

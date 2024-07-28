@@ -1,3 +1,5 @@
+package JavaFx;
+
 public class JogadorAzarado extends Jogador {
 
     // Métodos

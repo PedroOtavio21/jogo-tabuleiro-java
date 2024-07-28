@@ -1,3 +1,5 @@
+package JavaFx;
+
 public abstract class Jogador {
 
     // Atributos

@@ -54,6 +54,10 @@ public class Main {
 
         }
 
+        if (fimDeJogo == true) {
+            hud.HudCompleto(rodadaAtual);
+        }
+
         System.out.println("Fim de jogo. Até a próxima");
     }
 

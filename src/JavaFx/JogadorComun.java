@@ -1,3 +1,5 @@
+package JavaFx;
+
 public class JogadorComun extends Jogador {
 
     // Metodos
